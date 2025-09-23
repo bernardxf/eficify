@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'metropolisblack';
+  src: url('../fonts/metropolis-black.woff2') format('woff2'),
+    url('../fonts/metropolis-black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'metropolisbold';
+  src: url('../fonts/metropolis-bold.woff2') format('woff2'),
+    url('../fonts/metropolis-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'metropolisextra_bold';
+  src: url('../fonts/metropolis-extrabold.woff2') format('woff2'),
+    url('../fonts/metropolis-extrabold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'metropolismedium';
+  src: url('../fonts/metropolis-medium.woff2') format('woff2'),
+    url('../fonts/metropolis-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'metropolisregular';
+  src: url('../fonts/metropolis-regular.woff2') format('woff2'),
+    url('../fonts/metropolis-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'metropolissemi_bold';
+  src: url('../fonts/metropolis-semibold.woff2') format('woff2'),
+    url('../fonts/metropolis-semibold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

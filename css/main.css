@@ -1,0 +1,537 @@
+:root {
+  --black: #000000;
+  --blue: #27326f;
+  --dark-purple: #23102e;
+  --dark-purple-2: #471C49;
+  --gray: #7E7E7E;
+  --orange: #ef4538;
+  --purple: #68286a;
+  --light-blue: #a0dbe6;
+  --light-orange: #f36e51;
+  --light-purple: #5c50a1;
+  --light-purple-2: #D97BDE;
+  --white: #ffffff;
+  --yellow: #f8ee59;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--white);
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
+}
+body,
+html {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "metropolisregular";
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+  line-height: 1.2;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+header,
+main,
+footer,
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1010px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  color: var(--white);
+  display: flex;
+  font-family: "metropolisextra_bold";
+  font-size: 13px;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+header {
+  left: 0;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+header nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+header nav img {
+  display: block;
+  height: 50px;
+  width: 156px;
+}
+header nav ul {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+header nav ul a {
+  display: block;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#hero {
+  background-color: var(--purple);
+  background-image: url(../img/bg-footer.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  padding: 150px 0 100px;
+}
+#hero .container {
+  flex-direction: row;
+}
+#hero .text {
+  align-items: flex-start;
+  background-color: var(--purple);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 100%;
+  justify-content: center;
+  min-width: 42%;
+}
+#hero .text h2 {
+  color: var(--white);
+  font-family: "metropolisextra_bold";
+  font-size: 55px;
+  line-height: 1;
+}
+#hero .text h4 {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 400;
+}
+#hero .banner {
+  display: block;
+  max-height: 625px;
+}
+
+#about {
+  background-image: url(../img/bg-about.png);
+  background-position: 0 0;
+  padding: 20px 0 90px;
+}
+#about:after {
+  border-bottom: 25px solid var(--white);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: 170px;
+  position: absolute;
+  right: 170px;
+  top: -24px;
+}
+#about h2 {
+  font-family: "metropolisextra_bold";
+  font-size: 56px;
+  line-height: 65px;
+}
+#about p {
+  color: var(--gray);
+  font-family: "metropolismedium";
+  font-size: 22px;
+  text-align: center;
+}
+
+#work {
+  padding: 80px 0;
+}
+
+#differences {
+  background-color: var(--purple);
+  background-image: url(../img/bg-differences.png);
+  background-position: 0 0;
+  padding: 20px 0 90px;
+}
+#differences:after {
+  border-bottom: 25px solid var(--purple);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: 170px;
+  position: absolute;
+  right: 170px;
+  top: -24px;
+}
+#differences h2 {
+  color: var(--white);
+  display: block;
+  font-family: "metropolisextra_bold";
+  font-size: 60px;
+}
+#differences .items {
+  align-items: flex-start;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+}
+#differences .items .item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  max-width: 280px;
+  width: 100%;
+}
+#differences .items .item .title {
+  color: var(--white);
+  display: block;
+  font-family: "metropolisextra_bold";
+  font-size: 20px;
+  text-align: center;
+}
+#differences .items .item .desc {
+  color: var(--light-purple-2);
+  display: block;
+  font-size: 17px;
+  text-align: center;
+}
+#differences .items .item .desc strong {
+  font-family: "metropolisblack";
+}
+
+#results {
+  background-color: var(--dark-purple-2);
+  background-image: url(../img/bg-results.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  padding: 20px 0 90px;
+}
+#results:after {
+  border-bottom: 25px solid var(--dark-purple-2);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: 170px;
+  position: absolute;
+  right: 170px;
+  top: -24px;
+}
+#results h2 {
+  color: var(--orange);
+  display: block;
+  font-family: "metropolisextra_bold";
+  font-size: 50px;
+}
+#results h4 {
+  color: var(--white);
+  display: block;
+  font-family: "metropolismedium";
+  font-size: 22px;
+  font-weight: normal;
+}
+#results .items {
+  align-items: flex-start;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  margin-top: 60px;
+  width: 100%;
+}
+#results .items .item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+#results .items .item .title {
+  color: var(--orange);
+  display: block;
+  font-family: "metropolisextra_bold";
+  font-size: 48px;
+}
+#results .items .item .desc {
+  color: var(--white);
+  display: block;
+  font-size: 17px;
+  text-align: center;
+}
+#results .items .item .desc strong {
+  font-family: "metropolisblack";
+}
+
+#contact {
+  background: linear-gradient(to right, transparent 0, transparent 35%, var(--orange) 35%, var(--orange) 100%);
+  padding: 0;
+}
+#contact:after {
+  border-bottom: 25px solid var(--white);
+  border-left: 0;
+  border-right: 25px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: -24px;
+  width: 200px;
+}
+#contact:before {
+  border-bottom: 25px solid var(--orange);
+  border-left: 25px solid transparent;
+  border-right: 0;
+  content: "";
+  display: block;
+  height: 0;
+  right: 0;
+  position: absolute;
+  top: -24px;
+  width: 200px;
+}
+#contact .bg-contact {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -80px;
+}
+#contact .container {
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+#contact .text {
+  background-color: var(--white);
+  padding: 70px 0;
+  position: relative;
+  width: 40%;
+}
+#contact .text:after {
+  border-top: 265px solid transparent;
+  border-bottom: 265px solid transparent;
+  border-left: 40px solid var(--white);
+  content: "";
+  height: 0;
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 0;
+}
+#contact .text img {
+  display: block;
+  margin-bottom: 40px;
+}
+#contact .text h2 {
+  color: var(--white);
+  display: block;
+  font-family: "metropolisextra_bold";
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-shadow: var(--orange) 2px 0px 0px, var(--orange) 1.75517px 0.958851px 0px, var(--orange) 1.0806px 1.68294px 0px, var(--orange) 0.141474px 1.99499px 0px, var(--orange) -0.832294px 1.81859px 0px, var(--orange) -1.60229px 1.19694px 0px, var(--orange) -1.97998px 0.28224px 0px, var(--orange) -1.87291px -0.701566px 0px, var(--orange) -1.30729px -1.5136px 0px, var(--orange) -0.421592px -1.95506px 0px, var(--orange) 0.567324px -1.91785px 0px, var(--orange) 1.41734px -1.41108px 0px, var(--orange) 1.92034px -0.558831px 0px;
+}
+#contact .text p {
+  display: block;
+  font-family: "metropolismedium";
+  font-size: 17px;
+}
+#contact form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  max-width: 390px;
+  padding: 70px 0;
+  width: 100%;
+}
+#contact form input,
+#contact form textarea {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: var(--white);
+  display: block;
+  font-family: "metropolismedium";
+  font-size: 18px;
+  height: 64px;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+}
+#contact form input::-moz-placeholder, #contact form textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: var(--white);
+}
+#contact form textarea {
+  height: 156px;
+}
+
+footer {
+  background-image: url(../img/bg-footer.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-color: var(--dark-purple-2);
+  padding: 70px 0;
+}
+footer:after {
+  border-bottom: 25px solid var(--dark-purple-2);
+  border-left: 0;
+  border-right: 25px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: -24px;
+  width: 200px;
+}
+footer:before {
+  border-bottom: 25px solid var(--dark-purple-2);
+  border-left: 25px solid transparent;
+  border-right: 0;
+  content: "";
+  display: block;
+  height: 0;
+  right: 0;
+  position: absolute;
+  top: -24px;
+  width: 200px;
+}
+footer .container {
+  align-items: start;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .logo {
+  align-self: center;
+}
+footer .logo img {
+  display: block;
+  height: 44px;
+  width: 140px;
+}
+footer .social-button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  width: 45px;
+}
+footer dl dt {
+  color: var(--white);
+  display: block;
+  font-family: "metropolisbold";
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+footer dl dd {
+  align-items: center;
+  color: var(--white);
+  display: flex;
+  font-size: 15px;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=main.css.map */

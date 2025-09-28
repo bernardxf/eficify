@@ -30,8 +30,9 @@ ol {
   list-style: none;
 }
 
-html:focus-within {
+html {
   scroll-behavior: smooth;
+  scroll-padding: 100px;
 }
 
 a {
@@ -100,6 +101,18 @@ section {
   width: 100%;
 }
 
+h2 {
+  font-family: "metropolisextra_bold";
+  font-size: 55px;
+  line-height: 1;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  h2 {
+    font-size: 35px;
+  }
+}
+
 .container {
   align-items: center;
   display: flex;
@@ -128,11 +141,18 @@ section {
 }
 
 header {
+  background-color: var(--purple);
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
   left: 0;
   padding: 20px 0;
   position: fixed;
   top: 0;
   z-index: 3;
+}
+@media (max-width: 640px) {
+  header {
+    padding: 10px 0;
+  }
 }
 header nav {
   align-items: center;
@@ -145,11 +165,55 @@ header nav img {
   height: 50px;
   width: 156px;
 }
+@media (max-width: 640px) {
+  header nav img {
+    height: 35px;
+    width: auto;
+  }
+}
+header nav .icon-menu {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  height: 25px;
+  justify-content: space-between;
+  width: 30px;
+}
+header nav .icon-menu span {
+  background-color: var(--white);
+  display: block;
+  height: 5px;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  header nav .icon-menu {
+    display: flex;
+  }
+}
 header nav ul {
   align-items: center;
   display: flex;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: center;
+}
+@media (max-width: 640px) {
+  header nav ul {
+    background-color: var(--purple);
+    border-top: 2px solid var(--orange);
+    flex-direction: column;
+    gap: 60px;
+    position: fixed;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    transition: all linear 0.25s;
+    transform: translateX(100vw);
+  }
+  header nav ul.active {
+    transform: translateX(0vw);
+  }
 }
 header nav ul a {
   display: block;
@@ -157,6 +221,12 @@ header nav ul a {
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
+}
+@media (max-width: 640px) {
+  header nav ul a {
+    font-size: 22px;
+    line-height: 22px;
+  }
 }
 
 #hero {
@@ -169,6 +239,11 @@ header nav ul a {
 #hero .container {
   flex-direction: row;
 }
+@media (max-width: 640px) {
+  #hero .container {
+    flex-direction: column;
+  }
+}
 #hero .text {
   align-items: flex-start;
   background-color: var(--purple);
@@ -179,10 +254,14 @@ header nav ul a {
   justify-content: center;
   min-width: 42%;
 }
+@media (max-width: 640px) {
+  #hero .text {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+}
 #hero .text h2 {
   color: var(--white);
-  font-family: "metropolisextra_bold";
-  font-size: 55px;
   line-height: 1;
 }
 #hero .text h4 {
@@ -212,20 +291,115 @@ header nav ul a {
   right: 170px;
   top: -24px;
 }
+@media (max-width: 640px) {
+  #about:after {
+    display: none;
+  }
+}
 #about h2 {
-  font-family: "metropolisextra_bold";
-  font-size: 56px;
-  line-height: 65px;
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin: 0 0 40px;
+  position: relative;
+  width: 100%;
+}
+#about h2 span {
+  background-color: var(--purple);
+  display: block;
+  height: 1px;
+  width: 60px;
 }
 #about p {
   color: var(--gray);
-  font-family: "metropolismedium";
+  display: block;
   font-size: 22px;
   text-align: center;
 }
-
-#work {
-  padding: 80px 0;
+#about .about-grid {
+  align-items: flex-start;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  #about .about-grid {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
+#about .about-grid .item {
+  display: block;
+  width: 100%;
+}
+#about .about-grid .item h4 {
+  color: var(--purple);
+  display: block;
+  font-family: "metropolismedium";
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+}
+#about .about-grid .item p {
+  text-align: left;
+  margin-top: 10px;
+}
+#about .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  #about .benefits-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+#about .benefits-grid .item {
+  align-items: center;
+  background-image: linear-gradient(to right, #F36D51, #FF957F);
+  border-radius: 20px;
+  display: flex;
+  height: 250px;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  #about .benefits-grid .item {
+    height: auto;
+  }
+}
+#about .benefits-grid .item:nth-child(1) {
+  grid-area: 1/1/2/2;
+}
+#about .benefits-grid .item:nth-child(2) {
+  grid-area: 1/2/2/3;
+}
+#about .benefits-grid .item:nth-child(3) {
+  grid-area: 2/1/3/2;
+}
+#about .benefits-grid .item:nth-child(4) {
+  grid-area: 2/2/3/3;
+}
+#about .benefits-grid .item .text {
+  display: block;
+  width: 60%;
+}
+#about .benefits-grid .item h4 {
+  color: var(--white);
+  font-family: "metropolisextra_bold";
+  font-size: 22px;
+}
+#about .benefits-grid .item p {
+  color: var(--white);
+  font-size: 16px;
+  text-align: left;
 }
 
 #differences {
@@ -246,11 +420,14 @@ header nav ul a {
   right: 170px;
   top: -24px;
 }
+@media (max-width: 640px) {
+  #differences:after {
+    display: none;
+  }
+}
 #differences h2 {
   color: var(--white);
   display: block;
-  font-family: "metropolisextra_bold";
-  font-size: 60px;
 }
 #differences .items {
   align-items: flex-start;
@@ -306,11 +483,14 @@ header nav ul a {
   right: 170px;
   top: -24px;
 }
+@media (max-width: 640px) {
+  #results:after {
+    display: none;
+  }
+}
 #results h2 {
   color: var(--orange);
   display: block;
-  font-family: "metropolisextra_bold";
-  font-size: 50px;
 }
 #results h4 {
   color: var(--white);
@@ -326,6 +506,11 @@ header nav ul a {
   justify-content: space-between;
   margin-top: 60px;
   width: 100%;
+}
+@media (max-width: 640px) {
+  #results .items {
+    flex-wrap: wrap;
+  }
 }
 #results .items .item {
   align-items: center;
@@ -355,6 +540,11 @@ header nav ul a {
   background: linear-gradient(to right, transparent 0, transparent 35%, var(--orange) 35%, var(--orange) 100%);
   padding: 0;
 }
+@media (max-width: 640px) {
+  #contact {
+    background: var(--white);
+  }
+}
 #contact:after {
   border-bottom: 25px solid var(--white);
   border-left: 0;
@@ -366,6 +556,11 @@ header nav ul a {
   position: absolute;
   top: -24px;
   width: 200px;
+}
+@media (max-width: 640px) {
+  #contact:after {
+    display: none;
+  }
 }
 #contact:before {
   border-bottom: 25px solid var(--orange);
@@ -379,6 +574,11 @@ header nav ul a {
   top: -24px;
   width: 200px;
 }
+@media (max-width: 640px) {
+  #contact:before {
+    display: none;
+  }
+}
 #contact .bg-contact {
   display: block;
   position: absolute;
@@ -391,11 +591,25 @@ header nav ul a {
   justify-content: space-between;
   position: relative;
 }
+@media (max-width: 640px) {
+  #contact .container {
+    flex-direction: column;
+  }
+}
 #contact .text {
   background-color: var(--white);
   padding: 70px 0;
   position: relative;
   width: 40%;
+}
+@media (max-width: 640px) {
+  #contact .text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 }
 #contact .text:after {
   border-top: 265px solid transparent;
@@ -408,6 +622,11 @@ header nav ul a {
   top: 0;
   width: 0;
 }
+@media (max-width: 640px) {
+  #contact .text:after {
+    display: none;
+  }
+}
 #contact .text img {
   display: block;
   margin-bottom: 40px;
@@ -415,8 +634,6 @@ header nav ul a {
 #contact .text h2 {
   color: var(--white);
   display: block;
-  font-family: "metropolisextra_bold";
-  font-size: 50px;
   line-height: 1;
   margin-bottom: 20px;
   text-shadow: var(--orange) 2px 0px 0px, var(--orange) 1.75517px 0.958851px 0px, var(--orange) 1.0806px 1.68294px 0px, var(--orange) 0.141474px 1.99499px 0px, var(--orange) -0.832294px 1.81859px 0px, var(--orange) -1.60229px 1.19694px 0px, var(--orange) -1.97998px 0.28224px 0px, var(--orange) -1.87291px -0.701566px 0px, var(--orange) -1.30729px -1.5136px 0px, var(--orange) -0.421592px -1.95506px 0px, var(--orange) 0.567324px -1.91785px 0px, var(--orange) 1.41734px -1.41108px 0px, var(--orange) 1.92034px -0.558831px 0px;
@@ -425,6 +642,11 @@ header nav ul a {
   display: block;
   font-family: "metropolismedium";
   font-size: 17px;
+}
+@media (max-width: 640px) {
+  #contact .text p {
+    text-align: center;
+  }
 }
 #contact form {
   align-items: center;
@@ -435,6 +657,15 @@ header nav ul a {
   max-width: 390px;
   padding: 70px 0;
   width: 100%;
+}
+@media (max-width: 640px) {
+  #contact form {
+    background-color: var(--orange);
+    padding: 30px 20px;
+    left: -20px;
+    position: relative;
+    width: calc(100% + 40px);
+  }
 }
 #contact form input,
 #contact form textarea {
@@ -472,6 +703,11 @@ footer {
   background-color: var(--dark-purple-2);
   padding: 70px 0;
 }
+@media (max-width: 640px) {
+  footer {
+    padding: 35px 0;
+  }
+}
 footer:after {
   border-bottom: 25px solid var(--dark-purple-2);
   border-left: 0;
@@ -483,6 +719,11 @@ footer:after {
   position: absolute;
   top: -24px;
   width: 200px;
+}
+@media (max-width: 640px) {
+  footer:after {
+    display: none;
+  }
 }
 footer:before {
   border-bottom: 25px solid var(--dark-purple-2);
@@ -496,10 +737,23 @@ footer:before {
   top: -24px;
   width: 200px;
 }
+@media (max-width: 640px) {
+  footer:before {
+    display: none;
+  }
+}
 footer .container {
   align-items: start;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 640px) {
+  footer .container {
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
 }
 footer .logo {
   align-self: center;

@@ -1,0 +1,13 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php80-script .php
+suPHP_ConfigPath /home/eficify1/
+##### LOCAWEB - NAO REMOVER #####
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://https://eficify.com.br/$1 [R,L]

@@ -320,32 +320,68 @@ header nav ul a {
 #about .about-grid {
   align-items: flex-start;
   display: flex;
-  gap: 30px;
+  gap: 40px;
   justify-content: space-between;
-  margin-top: 50px;
+  margin: 50px 0;
   width: 100%;
 }
 @media (max-width: 640px) {
   #about .about-grid {
+    align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
   }
 }
 #about .about-grid .item {
-  display: block;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  justify-content: flex-end;
+  width: 280px;
+}
+#about .about-grid .item:nth-child(1) {
+  background: url("../img/about-1.png") 0 0 no-repeat;
+}
+#about .about-grid .item:nth-child(2) {
+  background: url("../img/about-2.png") 0 0 no-repeat;
+}
+#about .about-grid .item:nth-child(3) {
+  background: url("../img/about-3.png") 0 0 no-repeat;
+}
+#about .about-grid .item .text {
+  align-items: flex-start;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
   width: 100%;
 }
 #about .about-grid .item h4 {
-  color: var(--purple);
+  color: var(--white);
   display: block;
   font-family: "metropolismedium";
   font-size: 22px;
-  text-align: center;
   width: 100%;
 }
 #about .about-grid .item p {
+  color: var(--white);
+  display: block;
+  font-size: 16px;
+  height: 0px;
+  line-height: 1.1;
   text-align: left;
   margin-top: 10px;
+  overflow: hidden;
+  transition: all linear 0.2s;
+}
+#about .about-grid .item:hover .text {
+  background: rgba(0, 0, 0, 0.7);
+}
+#about .about-grid .item:hover .text p {
+  height: 160px;
 }
 #about .benefits-grid {
   display: grid;
@@ -576,7 +612,12 @@ header nav ul a {
 }
 @media (max-width: 640px) {
   #contact:before {
-    display: none;
+    background: var(--orange);
+    border: none;
+    bottom: 0;
+    height: 449px;
+    top: auto;
+    width: 100%;
   }
 }
 #contact .bg-contact {
@@ -660,11 +701,8 @@ header nav ul a {
 }
 @media (max-width: 640px) {
   #contact form {
-    background-color: var(--orange);
-    padding: 30px 20px;
-    left: -20px;
-    position: relative;
-    width: calc(100% + 40px);
+    max-width: 100%;
+    padding: 30px 0;
   }
 }
 #contact form input,
@@ -772,6 +810,10 @@ footer .social-button {
   height: 45px;
   justify-content: center;
   width: 45px;
+}
+footer .social-button img {
+  display: block;
+  width: 24px;
 }
 footer dl dt {
   color: var(--white);
